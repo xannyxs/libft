@@ -23,18 +23,22 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		return (str2);
 	i = 0;
 	j = 0;
-	while (*str2 != '\0' && len--)
+	while (*str2 != '\0' && len)
 	{
-		while (str2[i] == to_find[j] && str[i] != '\0')
+		while (str2[i] == to_find[j] && str[i] && len)
 		{
+			len--;
 			i++;
 			j++;
-			if (to_find[j] == '\0')
+			if (!to_find[j])
 				return (str2);
+			if (!len)
+				return (NULL);
 		}
-		if (j != 0)
-			j = 0;
+		j = 0;
+		i = 0;
 		str2++;
+		len--;
 	}
 	return (NULL);
 }

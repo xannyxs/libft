@@ -54,10 +54,10 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	len = 0;
-	word = ft_countwords(s, c);
 	if (!s)
 		return (NULL);
-	str = (char **)ft_calloc(sizeof(char *), word);
+	word = ft_countwords(s, c);
+	str = (char **)ft_calloc(sizeof(char *), word + 1);
 	if (!str)
 		return (NULL);
 	while (i < word)

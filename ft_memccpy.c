@@ -24,11 +24,15 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (n != 0)
 	{
 		n--;
-		*d++ = *s++;
+		*d = *s;
+		d++;
+		s++;
 		i++;
 		if (*s == (unsigned char)c)
 		{
-			*d++ = *s++;
+			*d = *s;
+			d++;
+			s++;
 			return (dest + i + 1);
 		}
 	}

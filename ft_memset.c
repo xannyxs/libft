@@ -19,8 +19,9 @@ void	*ft_memset(void *str, int c, size_t len)
 
 	s = (unsigned char *)str;
 	i = 0;
-	while (len--)
+	while (len)
 	{
+		len--;
 		s[i] = c;
 		i++;
 	}
