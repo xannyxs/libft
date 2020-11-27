@@ -74,10 +74,8 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		word;
 	int		i;
-	size_t	len;
 
 	i = 0;
-	len = 0;
 	if (!s)
 		return (NULL);
 	word = ft_countwords(s, c);
