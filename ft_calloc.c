@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 void	*ft_calloc(size_t nitems, size_t n)
@@ -28,11 +29,6 @@ void	*ft_calloc(size_t nitems, size_t n)
 	result = malloc(n * nitems);
 	if (!result)
 		return (NULL);
-	while (total != 0)
-	{
-		total--;
-		((char*)result)[i] = 0;
-		i++;
-	}
+	ft_bzero(result, total);
 	return (result);
 }
