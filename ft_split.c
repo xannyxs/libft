@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_freearray(char **s, int i)
 {
@@ -30,6 +31,7 @@ size_t	ft_countwords(const char *str, int c)
 
 	state = 0;
 	counter = 0;
+
 	while (*str)
 	{
 		if (*str == c)
@@ -44,24 +46,28 @@ size_t	ft_countwords(const char *str, int c)
 	return (counter);
 }
 
-char	**ft_leukesplit(char const *s, char c, int word)
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	pos;
 	size_t	len;
 
-	len = 0;
 	i = 0;
-	str = (char **)ft_calloc(sizeof(char *), word + 1);
-	while (i < word)
+	len = 0;
+	if (!s)
+		return (NULL);
+	str = (char **)ft_calloc(sizeof(char *), ft_countwords(s, c) + 1);
+	if (!str)
+		return (NULL);
+	while (i < ft_countwords(s, c))
 	{
 		while (s[len] == c)
 			len++;
-		j = len;
+		pos = len;
 		while (s[len] && s[len] != c)
 			len++;
-		str[i] = ft_substr(s, j, len - j);
+		str[i] = ft_substr(s, pos, len - pos);
 		if (str[i] == NULL)
 			return (ft_freearray(str, i));
 		i++;
@@ -69,20 +75,3 @@ char	**ft_leukesplit(char const *s, char c, int word)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	char	**str;
-	int		word;
-	int		i;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	word = ft_countwords(s, c);
-	str = (char **)ft_calloc(sizeof(char *), word + 1);
-	if (!str)
-		return (NULL);
-	if (i < word)
-		str = ft_leukesplit(s, c, word);
-	return (str);
-}
