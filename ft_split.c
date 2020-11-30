@@ -30,7 +30,6 @@ size_t	ft_countwords(const char *str, int c)
 
 	state = 0;
 	counter = 0;
-
 	while (*str)
 	{
 		if (*str == c)
