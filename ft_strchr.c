@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
+/*   By: xvoorvaa <xvoorvaa@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:07:11 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 15:07:12 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/05/27 16:08:05 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	char *str2;
+	char *ptr;
 
-	str2 = (char *)str;
-	while (*str2 != c)
+	ptr = (char *)str;
+	while (*ptr != c)
 	{
-		if (*str2 == '\0')
-		{
+		if (*ptr == '\0')
 			return (NULL);
-		}
-		str2++;
+		ptr++;
 	}
-	return (str2);
+	return (ptr);
 }
