@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:58:24 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:58:27 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:53:55 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	char	*d;
 	char	*s;
 
-	d = (char*)dest;
-	s = (char*)src;
+	d = (char *)dest;
+	s = (char *)src;
 	if (dest != NULL || src != NULL)
 	{
 		if (d > s)

@@ -6,15 +6,15 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:07:58 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 15:07:59 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:55:10 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int		ft_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)

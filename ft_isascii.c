@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:53:32 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:53:34 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 17:02:01 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int argc)
+int	ft_isascii(int argc)
 {
 	if (argc < 0 || argc > 127)
 		return (0);

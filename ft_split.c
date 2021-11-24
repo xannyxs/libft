@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:59:03 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:59:04 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:56:16 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	*ft_freearray(char **s, int i)
 
 size_t	ft_countwords(const char *str, int c)
 {
-	int			state;
-	unsigned	counter;
+	int				state;
+	unsigned int	counter;
 
 	state = 0;
 	counter = 0;

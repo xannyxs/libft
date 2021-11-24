@@ -6,24 +6,23 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:54:49 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:54:55 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:52:42 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int negative;
-	int answer;
+	int	i;
+	int	negative;
+	int	answer;
 
 	i = 0;
 	answer = 0;
 	negative = 1;
-	while (str[i] && (str[i] == '\f' || str[i] == '\r' || str[i] == ' ' ||
-			str[i] == '\t' || str[i] == '\v' || str[i] == '\n'))
+	while (str[i] && str[i] < 33)
 		i++;
 	if (str[i] == '\e' || ((str[i] < '0' || str[i] > '9')
-		&& (str[i] != '+' && str[i] != '-')))
+			&& (str[i] != '+' && str[i] != '-')))
 		return (0);
 	while (str[i] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:51:01 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:51:07 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:53:27 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (dst[i] != '\0' && i < n)

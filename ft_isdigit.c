@@ -6,11 +6,11 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 14:47:15 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:47:23 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:59:24 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int argc)
+int	ft_isdigit(int argc)
 {
 	if (argc < '0' || argc > '9')
 		return (0);
