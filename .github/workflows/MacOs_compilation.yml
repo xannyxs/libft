@@ -1,4 +1,4 @@
-name: Libft macOS compile check CI
+name: Libft MacOs compile check CI
 
 on:
   push:
@@ -7,12 +7,13 @@ on:
     branches: [ master ]
 
 jobs:
-  stevejobs:
+  build:
 
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - run: export TERM=xterm
     - name: make re
-      run:  |
+      run: |
             make re
