@@ -54,7 +54,6 @@ all:	$(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@clear
 	@printf $(START)
 	@printf $(COMP_MESSAGE) $(SRCS)
 	@printf $(MESSAGE)

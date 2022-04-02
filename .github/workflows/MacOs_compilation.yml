@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: make
+    - name: make re
       run: |
-            make
+            make re
