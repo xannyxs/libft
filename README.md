@@ -19,6 +19,8 @@ make
 </pre>
 This commands will compile everything and a executable "libft" should be created.
 <br><br>
+![how_to_libft_v1](https://user-images.githubusercontent.com/56308735/161396797-3ccd33ab-cf12-4585-b3c8-05e2d874619b.gif)
+
 <h2>Functions from <code style="color:#78dda5;">&lt;ctype.h&gt;</code> library </h2>
 
 <li>ft_isalnum - alphanumeric character test.</li>
