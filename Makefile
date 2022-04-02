@@ -23,7 +23,7 @@ SRCS		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 				ft_memcpy.c ft_split.c ft_strmapi.c ft_strrchr.c \
 				ft_memccpy.c ft_memset.c \
 
-SHELL			:=	/bin/zsh
+SHELL			:=	/bin/bash
 HEADERS			:=	libft.h
 OBJS			:=	$(SRCS:.c=.o)
 OBJECTS			:=	$(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(OBJS))
