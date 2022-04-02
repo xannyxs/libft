@@ -1,18 +1,18 @@
 name: Libft macOS compile check CI
 
 on:
-	push:
-		branches: [ master ]
-	pull_request:
-		branches: [ master ]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-	stevejobs:
+  stevejobs:
 
-		runs-on: macos-latest
+    runs-on: macos-latest
 
-		steps:
-		- uses: actions/checkout@v2
-		- name: make re
-				run:  |
-					make re
+      steps:
+      - uses: actions/checkout@v2
+      - name: make re
+        run:  |
+	  make re
