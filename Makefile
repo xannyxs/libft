@@ -41,6 +41,12 @@ MESSAGE			=	"$(BLUE)---\nCompiling done!\n---\n$(RESET)"
 COMP_MESSAGE	=	"$(GREEN)Building C object... $(RESET)%-33.33s\r\n"
 REM_MESSAGE		=	"$(RED)Removing files...$(RESET)"
 
+ifdef DEBUG
+  FLAGS += -g -fsanitize=address
+else
+  FLAGS += -Ofast
+endif
+
 all:	$(NAME)
 
 %.o: %.c
