@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:09:25 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/24 17:02:35 by xander        ########   odam.nl         */
+/*   Updated: 2022/04/02 16:50:50 by xander        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef	struct		s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 int					ft_atoi(const char *str);
 
