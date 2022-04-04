@@ -1,5 +1,7 @@
 # Libft - Project #00
 
+[![xvoorvaa's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1l0g8q3005209mm02a81gfy/project/2020487)](https://github.com/JaeSeoKim/badge42)
+
 ### Workflows to check Linux and macOS compilation:
 
 [![Libft macOS compile check CI](https://github.com/xvoorvaa/libft/actions/workflows/MacOs_compilation.yml/badge.svg)](https://github.com/xvoorvaa/libft/actions/workflows/MacOs_compilation.yml)
