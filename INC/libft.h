@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:09:25 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/04/14 17:43:29 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/14 18:55:35 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int					ft_strcmp(const char *str1, const char *str2);
 int					ft_tolower(int argc);
 
 int					ft_toupper(int argc);
+
+char				*ft_strjoin_free(char *str1, char *str2);
 
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
