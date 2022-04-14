@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:09:25 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/04/14 17:25:08 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/04/14 17:43:29 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t n);
 size_t				ft_strlen(char const *str);
 
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
+
+int					ft_strcmp(const char *str1, const char *str2);
 
 int					ft_tolower(int argc);
 
