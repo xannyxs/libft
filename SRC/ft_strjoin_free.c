@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+
+#include <stdlib.h>
 
 char	*ft_strjoin_free(char *str1, char *str2)
 {
