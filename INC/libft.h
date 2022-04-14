@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:09:25 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/04/02 17:04:06 by xander        ########   odam.nl         */
+/*   Updated: 2022/04/14 17:25:08 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,7 @@ void				ft_putnbr_fd(int n, int fd);
 char				*ft_strjoin(char const *s1, char const *s2);
 
 char				*ft_strtrim(char const *s1, char const *set);
+
+void				ft_free_array(char **str);
 
 #endif
