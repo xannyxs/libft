@@ -64,11 +64,8 @@ This commands will compile everything and a executable "libft" should be created
 <li>ft_strlcat - size-bounded string concatenation.</li>
 <br>
 <h2>Non standard functions </h2>
-<li>ft_putchar * - output a character to stdout.</li>
 <li>ft_putchar_fd - output a character to given file.</li>
-<li>ft_putstr * - output string to stdout.</li>
 <li>ft_putstr_fd - output string to given file.</li>
-<li>ft_putnbr * - output integer to stdout.</li>
 <li>ft_putnbr_fd - output integer to given file.</li>
 <li>ft_itoa - convert integer to ASCII string.</li>
 <li>ft_substr - extract substring from string.</li>
