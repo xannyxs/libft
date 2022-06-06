@@ -9,7 +9,7 @@
 [![Libft Ubuntu compile check CI](https://github.com/xvoorvaa/libft/actions/workflows/ubuntu_compilation.yml/badge.svg)](https://github.com/xvoorvaa/libft/actions/workflows/ubuntu_compilation.yml)
 
 <h2> Description Libft</h2>   
-<p>*The goal of this project is create small functions that you can combine to create your own library. These functions need to be able to act like the real functions from the C library and also manage the same error handling.*</p>
+<p>The goal of this project is create small functions that you can combine to create your own library. These functions need to be able to act like the real functions from the C library and also manage the same error handling.</p>
 <h2>Installation</h2>
 
 *To build the programm there is only a few steps: First of all, you can download the repository through the following steps in any shell of your preference:*
