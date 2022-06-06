@@ -6,7 +6,7 @@
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 15:09:25 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2022/04/14 18:55:35 by xvoorvaa      ########   odam.nl         */
+/*   Updated: 2022/06/06 14:37:23 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 
 int					ft_atoi(const char *str);
+
+long				ft_atol(const char *str);
 
 void				ft_bzero(void *str, size_t n);
 
@@ -93,5 +95,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 
 void				ft_free_array(char **str);
+
+void				ft_print_array(char **str);
 
 #endif

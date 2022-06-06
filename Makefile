@@ -22,7 +22,7 @@ FILES			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_putstr_fd.c  ft_strjoin.c ft_strtrim.c ft_itoa.c \
 					ft_memcpy.c ft_split.c ft_strmapi.c ft_strrchr.c \
 					ft_memccpy.c ft_memset.c ft_free_array.c ft_strcmp.c \
-					ft_strjoin_free.c ft_print_array.c
+					ft_strjoin_free.c ft_print_array.c ft_atol.c
 
 SHELL			:=	/bin/bash
 HEADERS			:=	-I INC
