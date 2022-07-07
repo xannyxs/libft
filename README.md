@@ -1,4 +1,4 @@
-# Libft - Project #00
+# Libft - Your very first own library
 
 [![xvoorvaa's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1l0g8q3005209mm02a81gfy/project/2020487)](https://github.com/JaeSeoKim/badge42)
 
