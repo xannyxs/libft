@@ -12,7 +12,7 @@
 <p>The goal of this project is create small functions that you can combine to create your own library. These functions need to be able to act like the real functions from the C library and also manage the same error handling.</p>
 <h2>Installation</h2>
 
-*To build the programm there is only a few steps: First of all, you can download the repository through the following steps in any shell of your preference:*
+*To build the program, there are only a few steps: First of all, you can download the repository through the following steps in any shell of your preference:*
 <br>
 <pre>
 git clone git@github.com:xvoorvaa/libft.git
