@@ -24,7 +24,6 @@ FILES			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_memccpy.c ft_memset.c ft_free_array.c ft_strcmp.c \
 					ft_strjoin_free.c ft_print_array.c ft_atol.c
 
-SHELL			:=	/bin/bash
 HEADERS			:=	-I INC
 SRCS			:=	$(addprefix SRC/, $(FILES))
 OBJS			:=	$(SRCS:.c=.o)
