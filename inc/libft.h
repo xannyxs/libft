@@ -80,7 +80,9 @@ char *ft_substr(char const *str, unsigned int start, size_t len);
 
 size_t ft_countwords(const char *str, int c);
 
-char *ft_itoa(int n);
+char *ft_itoa(int32_t n);
+
+char *ft_ltoa(int64_t n);
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
