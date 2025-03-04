@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*   ft_putendl_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/20 14:58:40 by xvoorvaa      #+#    #+#                 */
-/*   Updated: 2021/11/24 17:01:29 by xander        ########   odam.nl         */
+/*   Created: 2020/11/20 14:52:41 by xvoorvaa      #+#    #+#                 */
+/*   Updated: 2020/11/20 14:52:42 by xvoorvaa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	i;
+void ft_putendl_fd(char *str, int32_t fd) {
+  if (!str) {
+    return;
+  }
 
-	i = n;
-	if (i < 0)
-	{
-		write(fd, "-", 1);
-		i = i * -1;
-	}
-	if (i > 9)
-	{
-		ft_putnbr_fd(i / 10, fd);
-		ft_putnbr_fd(i % 10, fd);
-	}
-	else
-	{
-		i = i + '0';
-		write(fd, &i, 1);
-	}
+  for (int32_t i = 0; str[i]; i++) {
+    if (write(fd, &str[i], 1) < 0) {
+      perror("ft_putendl_fd: write error");
+    }
+  }
+
+  if (write(fd, "\n", 1) < 0) {
+    perror("ft_putendl_fd: write error");
+  }
 }

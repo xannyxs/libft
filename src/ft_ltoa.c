@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_ltoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: xvoorvaa <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
@@ -12,57 +12,39 @@
 
 #include "libft.h"
 
-int	ft_countnbr(int count)
-{
-	int	i;
+#include <limits.h>
+#include <stdbool.h>
+#include <stdint.h>
 
-	i = 0;
-	while (count >= 10)
-	{
-		count = count / 10;
-		i++;
-	}
-	if (count < 10)
-	{
-		count = count % 10;
-		i++;
-	}
-	return (i);
-}
+char *ft_ltoa(int64_t n) {
+  if (n == LONG_MAX) {
+    char *ret = ft_strdup("-9223372036854775807");
+    return ret;
+  }
 
-char	*ft_leukeitoa(char *str, int n, int len)
-{
-	while (len != 0)
-	{
-		len--;
-		str[len] = n % 10 + '0';
-		if (n >= 10)
-			n = n / 10;
-	}
-	return (str);
-}
+  bool negative = false;
+  if (n < 0) {
+    n = n * -1;
+    negative = true;
+  }
 
-char	*ft_itoa(int n)
-{
-	int		negative;
-	char	*str;
-	int		len;
+  int32_t len = count_digits(n);
 
-	negative = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		n = n * -1;
-		negative = 1;
-	}
-	len = ft_countnbr(n) + negative;
-	str = ft_calloc(sizeof(char), len + 1);
-	if (str == NULL)
-		return (NULL);
-	if (len != 0)
-		str = ft_leukeitoa(str, n, len);
-	if (negative == 1)
-		str[0] = '-';
-	return (str);
+  len += negative;
+  char *str = ft_calloc(sizeof(char), len + 1);
+  if (!str) {
+    return NULL;
+  }
+
+  for (; len != 0; len--) {
+    len--;
+    str[len] = n % 10 + '0';
+    if (n >= 10)
+      n = n / 10;
+  }
+
+  if (negative == true)
+    str[0] = '-';
+
+  return str;
 }

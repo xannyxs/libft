@@ -11,10 +11,9 @@
 # ************************************************************************** #
 
 NAME			=	libft.a
-CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror -O2fast
+CFLAGS		=	-Wall -Wextra -Werror -O3 -pedantic -std=c11
 FILES			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
-					ft_strlcat.c  ft_strncmp.c ft_substr.c ft_atoi.c \
+					ft_strlcat.c  ft_strncmp.c ft_substr.c count_digits.c \
 					ft_isalpha.c ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
 					ft_strnstr.c  ft_tolower.c ft_bzero.c   ft_isascii.c \
 					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  \
@@ -22,10 +21,10 @@ FILES			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_putstr_fd.c  ft_strjoin.c ft_strtrim.c ft_itoa.c \
 					ft_memcpy.c ft_split.c ft_strmapi.c ft_strrchr.c \
 					ft_memccpy.c ft_memset.c ft_free_array.c ft_strcmp.c \
-					ft_strjoin_free.c ft_print_array.c ft_atol.c
+					ft_strjoin_free.c ft_print_array.c ft_atol.c ft_ltoa.c
 
-HEADERS			:=	-I INC
-SRCS			:=	$(addprefix SRC/, $(FILES))
+HEADERS			:=	-I inc
+SRCS			:=	$(addprefix src/, $(FILES))
 OBJS			:=	$(SRCS:.c=.o)
 
 PINK = \x1b[35;01m
@@ -63,5 +62,9 @@ fclean:		clean
 	@rm -rf $(NAME).dSYM
 
 re:			fclean all
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(HEADERS) -c $(SRCS)
+	$(CC) -shared -o libft.so $(OBJS) -nostartfiles
 
 .PHONY:		all clean fclean re
