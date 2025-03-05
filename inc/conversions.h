@@ -18,7 +18,7 @@
 
 typedef struct s_conversions {
   char key;
-  uint32_t (*func)(t_flags *, va_list);
+  uint32_t (*func)(t_width *, va_list);
 } t_conversions;
 
 #endif

@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <unistd.h>
 
-uint32_t print_int_width(t_flags *flags, unsigned int number) {
+uint32_t print_int_width(t_width *flags, unsigned int number) {
   int len;
   int amount_of_spaces;
 
@@ -29,7 +29,7 @@ uint32_t print_int_width(t_flags *flags, unsigned int number) {
   return (len);
 }
 
-uint32_t print_x(t_flags *flags, va_list ap, bool is_uppercase) {
+uint32_t print_x(t_width *flags, va_list ap, bool is_uppercase) {
   int32_t len = 0;
   uint32_t hex = va_arg(ap, int);
 

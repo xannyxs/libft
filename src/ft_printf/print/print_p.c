@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-static unsigned int print_int_width(t_flags *flags, unsigned long long number) {
+static unsigned int print_int_width(t_width *flags, unsigned long long number) {
   int len = 0;
   int amount_of_spaces = flags->width - ft_numlen(number, len) - 3;
 
@@ -28,7 +28,7 @@ static unsigned int print_int_width(t_flags *flags, unsigned long long number) {
   return len;
 }
 
-uint32_t print_p(t_flags *flags, va_list ap) {
+uint32_t print_p(t_width *flags, va_list ap) {
   size_t len = 0;
   unsigned long long hex = (unsigned long long)va_arg(ap, void *);
 

@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-uint32_t print_string_width(t_flags *flags, char *str) {
+uint32_t print_string_width(t_width *flags, char *str) {
   int len = 0;
   int amount_of_spaces;
 
@@ -36,7 +36,7 @@ uint32_t print_string_width(t_flags *flags, char *str) {
   return len;
 }
 
-uint32_t print_s(t_flags *flags, va_list ap) {
+uint32_t print_s(t_width *flags, va_list ap) {
   uint32_t len = 0;
   char *str = va_arg(ap, char *);
   ;

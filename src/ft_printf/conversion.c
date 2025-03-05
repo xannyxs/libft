@@ -15,7 +15,7 @@
 
 #include <unistd.h>
 
-uint32_t conversion(t_flags *flags, char *str, va_list ap) {
+uint32_t conversion(t_width *flags, char *str, va_list ap) {
   int32_t len = 0;
   const t_conversions s_conversions[] = {
       {'s', &print_s}, {'c', &print_c}, {'i', &print_id},   {'d', &print_id},

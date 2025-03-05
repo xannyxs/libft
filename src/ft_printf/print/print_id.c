@@ -36,7 +36,7 @@ uint32_t ft_putnbr_fd(int n, unsigned int len) {
   return len;
 }
 
-uint32_t print_int_width(t_flags *flags, int number) {
+uint32_t print_int_width(t_width *flags, int number) {
   int len = 0;
   int amount_of_spaces;
 
@@ -48,7 +48,7 @@ uint32_t print_int_width(t_flags *flags, int number) {
   return (len);
 }
 
-uint32_t print_id(t_flags *flags, va_list ap) {
+uint32_t print_id(t_width *flags, va_list ap) {
   int number = va_arg(ap, int);
   uint32_t len = 0;
 

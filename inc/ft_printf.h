@@ -21,27 +21,27 @@
 #define FLAGS "-0 "
 #define CONV "cspdiuxX%"
 
-typedef struct s_flags {
+typedef struct s_width {
   uint32_t width;
-} t_flags;
+} t_width;
 
 /*
         PRINT
 */
 
-unsigned int print_p(t_flags *flags, va_list ap);
+unsigned int print_p(t_width *flags, va_list ap);
 
-unsigned int print_x(t_flags *flags, va_list ap, bool is_uppercase);
+unsigned int print_x(t_width *flags, va_list ap, bool is_uppercase);
 
-unsigned int print_u(t_flags *flags, va_list ap);
+unsigned int print_u(t_width *flags, va_list ap);
 
-unsigned int print_c(t_flags *flags, va_list ap);
+unsigned int print_c(t_width *flags, va_list ap);
 
-unsigned int print_id(t_flags *flags, va_list ap);
+unsigned int print_id(t_width *flags, va_list ap);
 
-unsigned int print_s(t_flags *flags, va_list ap);
+unsigned int print_s(t_width *flags, va_list ap);
 
-unsigned int print_perc(t_flags *flags, va_list ap);
+unsigned int print_perc(t_width *flags, va_list ap);
 
 /*
         SRC
@@ -49,7 +49,7 @@ unsigned int print_perc(t_flags *flags, va_list ap);
 
 int ft_printf(const char *str, ...);
 
-uint32_t conversion(t_flags *flags, char *str, va_list ap);
+uint32_t conversion(t_width *flags, char *str, va_list ap);
 
 int convert_hex(uint64_t number, bool is_uppercase);
 

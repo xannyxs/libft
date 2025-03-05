@@ -50,7 +50,7 @@ uint32_t ft_put_unsigned_nbr_fd(unsigned int n, int fd, int len) {
   return (len);
 }
 
-uint32_t print_int_width(t_flags *flags, unsigned int number) {
+uint32_t print_int_width(t_width *flags, unsigned int number) {
   int len;
   int amount_of_spaces;
 
@@ -63,7 +63,7 @@ uint32_t print_int_width(t_flags *flags, unsigned int number) {
   return (len);
 }
 
-uint32_t print_u(t_flags *flags, va_list ap) {
+uint32_t print_u(t_width *flags, va_list ap) {
   unsigned int len;
   unsigned int number;
 

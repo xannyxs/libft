@@ -34,7 +34,7 @@ uint32_t len_of_width(const char *str, int32_t *offset) {
 int32_t ft_printf(const char *str, ...) {
   va_list arg;
   uint32_t len = 0;
-  t_flags flags = {0};
+  t_width flags = {0};
 
   va_start(arg, str);
 
