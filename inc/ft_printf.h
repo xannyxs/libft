@@ -26,25 +26,7 @@ typedef struct s_flags {
 } t_flags;
 
 /*
-        LIBFT
-*/
-
-void ft_putchar_fd(char c, int fd);
-
-char *ft_strchr(const char *str, int c);
-
-int ft_putnbr_fd(long n, int fd, unsigned int len);
-
-int ft_atoi(const char *str);
-
-size_t ft_strlen(char const *str);
-
-bool ft_isdigit(int argc);
-
-void ft_putstr_fd(char *s, int fd);
-
-/*
-        PRINT_
+        PRINT
 */
 
 unsigned int print_p(t_flags *flags, va_list ap);
