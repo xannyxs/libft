@@ -11,49 +11,51 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 #include <stdarg.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <unistd.h>
 
-static unsigned int	print_string_width(t_flags *flags, char *str)
-{
-	int	len;
-	int	amount_of_spaces;
+uint32_t print_string_width(t_flags *flags, char *str) {
+  int len = 0;
+  int amount_of_spaces;
 
-	len = 0;
-	if (!str)
-		amount_of_spaces = flags->width - 6;
-	else
-		amount_of_spaces = flags->width - (int)ft_strlen(str);
-	while (len < amount_of_spaces)
-	{
-		write(STDOUT_FILENO, " ", 1);
-		len++;
-	}
-	return (len);
+  if (!str) {
+    amount_of_spaces = flags->width - 6;
+  } else {
+    amount_of_spaces = flags->width - (int)ft_strlen(str);
+  }
+
+  while (len < amount_of_spaces) {
+    write(STDOUT_FILENO, " ", 1);
+    len++;
+  }
+
+  return len;
 }
 
-unsigned int	print_s(t_flags *flags, va_list ap)
-{
-	int				i;
-	char			*str;
-	unsigned int	len;
+uint32_t print_s(t_flags *flags, va_list ap) {
+  uint32_t len = 0;
+  char *str = va_arg(ap, char *);
+  ;
 
-	i = 0;
-	len = 0;
-	str = va_arg(ap, char *);
-	if (flags->width > 0)
-		len += print_string_width(flags, str);
-	if (!str)
-	{
-		write(STDOUT_FILENO, "(null)", 6);
-		return (6 + len);
-	}
-	while (str[i] != '\0')
-	{
-		write(STDOUT_FILENO, &str[i], 1);
-		len++;
-		i++;
-	}
-	return (len);
+  if (flags->width > 0) {
+    len += print_string_width(flags, str);
+  }
+
+  if (!str) {
+    write(STDOUT_FILENO, "(null)", 6);
+    return len + 6;
+  }
+
+  for (int32_t i = 0; str[i]; i++) {
+    if (write(STDOUT_FILENO, &str[i], 1) < 0) {
+      perror("Error in write");
+    };
+    len++;
+  }
+
+  return len;
 }

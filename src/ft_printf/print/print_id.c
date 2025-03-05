@@ -15,30 +15,47 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-static unsigned int	print_int_width(t_flags *flags, int number)
-{
-	int	len;
-	int	amount_of_spaces;
+uint32_t ft_putnbr_fd(int n, unsigned int len) {
+  long i;
 
-	len = 0;
-	amount_of_spaces = flags->width - ft_numlen(number, len);
-	while (len < amount_of_spaces)
-	{
-		write(STDOUT_FILENO, " ", 1);
-		len++;
-	}
-	return (len);
+  i = n;
+  if (i < 0) {
+    write(STDOUT_FILENO, "-", 1);
+    i = i * -1;
+    len++;
+  }
+  if (i > 9) {
+    len = ft_putnbr_fd(i / 10, len);
+    len = ft_putnbr_fd(i % 10, len);
+  } else {
+    i = i + '0';
+    write(STDOUT_FILENO, &i, 1);
+    len++;
+  }
+
+  return len;
 }
 
-unsigned int	print_id(t_flags *flags, va_list ap)
-{
-	int				number;
-	unsigned int	len;
+uint32_t print_int_width(t_flags *flags, int number) {
+  int len = 0;
+  int amount_of_spaces;
 
-	len = 0;
-	number = va_arg(ap, int);
-	if (flags->width > 0)
-		len += print_int_width(flags, number);
-	len += ft_putnbr_fd(number, STDOUT_FILENO, len) - len;
-	return (len);
+  amount_of_spaces = flags->width - ft_numlen(number, len);
+  while (len < amount_of_spaces) {
+    write(STDOUT_FILENO, " ", 1);
+    len++;
+  }
+  return (len);
+}
+
+uint32_t print_id(t_flags *flags, va_list ap) {
+  int number = va_arg(ap, int);
+  uint32_t len = 0;
+
+  if (flags->width > 0) {
+    len += print_int_width(flags, number);
+  }
+
+  len += ft_putnbr_fd(number, len) - len;
+  return (len);
 }

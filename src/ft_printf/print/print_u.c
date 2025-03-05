@@ -13,50 +13,64 @@
 #include "ft_printf.h"
 
 #include <stdarg.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <unistd.h>
 
-#include <stdio.h>
+int32_t ft_putnbr(int32_t n, int32_t len) {
+  int64_t i = n;
 
-static unsigned int	ft_put_unsigned_nbr_fd(unsigned int n, int fd, int len)
-{
-	if (n > 9)
-	{
-		len = ft_putnbr_fd(n / 10, fd, len);
-		len = ft_putnbr_fd(n % 10, fd, len);
-	}
-	else
-	{
-		n = n + '0';
-		write(fd, &n, 1);
-		len++;
-	}
-	return (len);
+  if (i < 0) {
+    write(STDOUT_FILENO, "-", 1);
+    i = i * -1;
+    len++;
+  }
+
+  if (i > 9) {
+    len = ft_putnbr(i / 10, len);
+    len = ft_putnbr(i % 10, len);
+  } else {
+    i = i + '0';
+    write(STDOUT_FILENO, &i, 1);
+    len++;
+  }
+
+  return len;
 }
 
-static unsigned int	print_int_width(t_flags *flags, unsigned int number)
-{
-	int	len;
-	int	amount_of_spaces;
-
-	len = 0;
-	amount_of_spaces = flags->width - ft_numlen(number, len);
-	while (len < amount_of_spaces)
-	{
-		write(STDOUT_FILENO, " ", 1);
-		len++;
-	}
-	return (len);
+uint32_t ft_put_unsigned_nbr_fd(unsigned int n, int fd, int len) {
+  if (n > 9) {
+    len = ft_putnbr(n / 10, len);
+    len = ft_putnbr(n % 10, len);
+  } else {
+    n = n + '0';
+    write(fd, &n, 1);
+    len++;
+  }
+  return (len);
 }
 
-unsigned int	print_u(t_flags *flags, va_list ap)
-{
-	unsigned int	len;
-	unsigned int	number;
+uint32_t print_int_width(t_flags *flags, unsigned int number) {
+  int len;
+  int amount_of_spaces;
 
-	len = 0;
-	number = (unsigned int) va_arg(ap, int);
-	if (flags->width > 0)
-		len += print_int_width(flags, number);
-	len += ft_put_unsigned_nbr_fd(number, STDOUT_FILENO, len) - len;
-	return (len);
+  len = 0;
+  amount_of_spaces = flags->width - ft_numlen(number, len);
+  while (len < amount_of_spaces) {
+    write(STDOUT_FILENO, " ", 1);
+    len++;
+  }
+  return (len);
+}
+
+uint32_t print_u(t_flags *flags, va_list ap) {
+  unsigned int len;
+  unsigned int number;
+
+  len = 0;
+  number = (unsigned int)va_arg(ap, int);
+  if (flags->width > 0)
+    len += print_int_width(flags, number);
+  len += ft_put_unsigned_nbr_fd(number, STDOUT_FILENO, len) - len;
+  return (len);
 }
