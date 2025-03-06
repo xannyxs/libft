@@ -16,27 +16,18 @@
 #include <stdint.h>
 #include <unistd.h>
 
-uint32_t print_int_width(t_width *flags, unsigned int number) {
-  int len;
-  int amount_of_spaces;
-
-  len = 0;
-  amount_of_spaces = flags->width - ft_numlen(number, len);
-  while (len <= amount_of_spaces) {
-    write(STDOUT_FILENO, " ", 1);
-    len++;
-  }
-  return (len);
-}
-
 uint32_t print_x(t_width *flags, va_list ap, bool is_uppercase) {
   int32_t len = 0;
   uint32_t hex = va_arg(ap, int);
 
   if (flags->width > 0) {
-    len += print_int_width(flags, hex);
-  }
+    int32_t amount_of_spaces = flags->width - ft_numlen(hex, len);
+    while (len < amount_of_spaces) {
+      write(STDOUT_FILENO, " ", 1);
+      len++;
+    }
 
-  len += convert_hex(hex, is_uppercase);
-  return len;
+    len += convert_hex(hex, is_uppercase);
+    return len;
+  }
 }

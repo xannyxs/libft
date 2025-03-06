@@ -64,13 +64,13 @@ uint32_t print_int_width(t_width *flags, unsigned int number) {
 }
 
 uint32_t print_u(t_width *flags, va_list ap) {
-  unsigned int len;
-  unsigned int number;
+  uint32_t len = 0;
+  uint32_t number = (unsigned int)va_arg(ap, int);
 
-  len = 0;
-  number = (unsigned int)va_arg(ap, int);
-  if (flags->width > 0)
+  if (flags->width > 0) {
     len += print_int_width(flags, number);
+  }
+
   len += ft_put_unsigned_nbr_fd(number, STDOUT_FILENO, len) - len;
   return (len);
 }

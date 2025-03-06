@@ -36,24 +36,16 @@ uint32_t ft_putnbr_fd(int n, unsigned int len) {
   return len;
 }
 
-uint32_t print_int_width(t_width *flags, int number) {
-  int len = 0;
-  int amount_of_spaces;
-
-  amount_of_spaces = flags->width - ft_numlen(number, len);
-  while (len < amount_of_spaces) {
-    write(STDOUT_FILENO, " ", 1);
-    len++;
-  }
-  return (len);
-}
-
 uint32_t print_id(t_width *flags, va_list ap) {
   int number = va_arg(ap, int);
   uint32_t len = 0;
 
   if (flags->width > 0) {
-    len += print_int_width(flags, number);
+    int amount_of_spaces = flags->width - ft_numlen(number, len);
+    while (len < amount_of_spaces) {
+      write(STDOUT_FILENO, " ", 1);
+      len++;
+    }
   }
 
   len += ft_putnbr_fd(number, len) - len;
